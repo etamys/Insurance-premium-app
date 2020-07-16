@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -42,6 +43,10 @@ public class one_year_goods extends AppCompatActivity implements AdapterView.OnI
     private TextView wc;
     private TextView passenger;
     private TextView nfpf;
+    private CheckBox cpa_box;
+    private int cpa_int;
+    private CheckBox imt_box;
+    private double imt_int_value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +102,28 @@ public class one_year_goods extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onClick(View v) {
                 updateResult();
+            }
+        });
+        cpa_box = findViewById(R.id.checkBox10);
+        cpa_box.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cpa_box.isChecked()){
+                    //cpa_int = 0;
+                }else if(!cpa_box.isChecked()){
+                    //cpa_int =0;
+                }
+            }
+        });
+        imt_box = findViewById(R.id.checkBox9);
+        imt_box.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(imt_box.isChecked()){
+                    //imt_int_value=
+                }else if(!imt_box.isChecked()){
+                    //imt_int_value=
+                }
             }
         });
     }

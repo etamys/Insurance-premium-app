@@ -128,7 +128,7 @@
         android:backgroundTint="@color/colorPrimaryDark"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="IDV"
+        android:hint="IDV"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -324,8 +324,8 @@
         android:id="@+id/spinner"
         android:layout_width="195dp"
         android:layout_height="20dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -353,6 +353,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="1"
+        android:textSize="14sp"
         android:textColor="#000000"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/zone_spin" />

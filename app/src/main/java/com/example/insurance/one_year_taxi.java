@@ -165,20 +165,47 @@ public class one_year_taxi extends AppCompatActivity implements AdapterView.OnIt
         }
 
         double od_value = (idv_int*(zone_int+age_int))/100;
+
+        //getting ncb spin
+        String ncb_string = ncb_spin.getSelectedItem().toString();
+        double ncb_int_value=0;
+        if(ncb_string.equals("20")){
+            ncb_int_value =  (od_value/100)*20;
+        }else if(ncb_string.equals("25")){
+            ncb_int_value =  (od_value/100)*25;
+        }else if(ncb_string.equals("35")){
+            ncb_int_value =  (od_value/100)*35;
+        }else if(ncb_string.equals("45")){
+            ncb_int_value =  (od_value/100)*45;
+        }else if(ncb_string.equals("50")){
+            ncb_int_value =  (od_value/100)*50;
+        }
+
+
+        int cpa_int_value = 295;
+        int pasenger_int = 3723;
+        int wc_int_value = 50;
+        double a_int_part = od_value - ncb_int_value;
+        int tp_int_value = 5769;
+        double b_int_part = tp_int_value+cpa_int_value+wc_int_value+pasenger_int;
+        double total_value = a_int_part+b_int_part;
+        double gst_value = (total_value*18)/100;
+        double total_final = total_value+gst_value;
+
         od.setText("OWN DAMAGE: "+od_value);
         nil_dep_value.setText("NIL DEP: +"+0.00);
-        ncb_value.setText("NCB: -"+0.00);
-       disscount_value.setText("DISCOUNT: -"+0.00);
-       a_part.setText("A= "+od_value);
-       tp_value.setText("TP: "+0.0);
-       cpa_value.setText("CPA: +"+0);
-      wc.setText("WC: +"+50);
-        passenger.setText("Passenger: +"+0.00);
-       b_part.setText("B= "+0.0);
-       a_and_b.setText("A+B= "+0.00);
-       gst.setText("GST@18%: "+0.00);
-       total.setText("TOTAL = "+0.000);
-       premium.setText("PREMIUM = "+0.00);
+        ncb_value.setText("NCB: -"+ncb_int_value);
+        disscount_value.setText("DISCOUNT: -"+0.0);
+        a_part.setText("A= "+a_int_part);
+        tp_value.setText("TP: "+tp_int_value);
+        cpa_value.setText("CPA: +"+cpa_int_value);
+        wc.setText("WC: +"+wc_int_value);
+        passenger.setText("Passenger: +"+pasenger_int);
+        b_part.setText("B= "+b_int_part);
+        a_and_b.setText("A+B= "+total_value);
+        gst.setText("GST@18%: "+gst_value);
+        total.setText("TOTAL = "+Math.round(total_final));
+        premium.setText("PREMIUM = "+Math.round(total_final));
 
     }
 
